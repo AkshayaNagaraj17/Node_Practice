@@ -4,10 +4,11 @@
 const express=require ("express")
 const app=express()
 
-app.get("/add",function(req,res)
+app.get("/add/:a/:b",function(req,res)
 {
-    const a=req.query.a
-    const b=req.query.b
+    //if we didnt give parse int then it concates
+    const a=parseInt(req.params.a)
+    const b=parseInt(req.params.b)
     res.json(
         {
             Answer : a + b
